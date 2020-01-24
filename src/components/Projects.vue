@@ -46,6 +46,7 @@ export default {
   height: auto;
   color: white;
   background: url("../assets/fade.jpg") no-repeat;
+  background-size: cover;
   padding-bottom: 4em;
 }
 h1 {

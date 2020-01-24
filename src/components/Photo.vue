@@ -72,6 +72,7 @@ export default {
   width: 100vw;
   height: 110vh;
   background: url("../assets/fade.jpg") no-repeat;
+  background-size: cover;
   margin: 0;
 }
 h1 {
@@ -100,7 +101,7 @@ h1 {
   max-width: 33em;
   height: 30em;
   justify-content: center;
-  margin: 1em 1em;
+  margin: 1em 8em;
 }
 .image:hover {
   cursor: pointer;
@@ -111,6 +112,7 @@ h1 {
 h3 {
   font-size: 24px;
   color: white;
+  justify-content: center;
 }
 
 .music {

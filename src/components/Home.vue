@@ -40,6 +40,7 @@ export default {
   height: 100vh;
   margin: 0;
   background: url("../assets/UNDERWATER.jpg") no-repeat;
+  background-size: cover;
 }
 .images {
   display: inline-block;

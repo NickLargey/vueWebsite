@@ -62,9 +62,12 @@ export default {
   justify-content: center;
   margin: -1;
   background: url("../assets/rocky-beach.jpg") no-repeat;
+  background-size: cover;
 }
 
 .about {
+  width: 75vw;
+  height: 100vh;
   display: grid;
   color: white;
 }

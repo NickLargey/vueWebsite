@@ -34,15 +34,19 @@ export default {
 
 <style>
 body {
-  width: 100%;
+  width: 90%;
   height: 100%;
   margin: 0;
+  border-left: solid white 5em;
+  border-right: solid white 3em;
 }
 #app {
+  display: grid;
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
   color: white;
-  background: black;
   justify-content: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
