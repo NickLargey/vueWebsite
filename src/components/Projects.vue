@@ -45,7 +45,7 @@ export default {
 h1 {
   display: flex;
   justify-content: center;
-  font-size: 36px;
+  font-size: 42px;
   font-family: "Amatic SC", cursive;
 }
 

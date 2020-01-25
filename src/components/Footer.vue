@@ -17,16 +17,16 @@ export default {
 <style scoped>
 #footer p {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   background: url("../assets/fade.jpg") no-repeat;
   background-size: cover;
   width: 100%;
   height: auto;
-  color: white;
   font-size: 16px;
   font-family: "Libre Barcode 128", cursive;
   margin: 0;
   padding: 1em;
-  border: solid pink 1px;
+  border-top: solid pink 1px;
+  border-bottom: solid pink 1px;
 }
 </style>

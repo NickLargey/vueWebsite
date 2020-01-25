@@ -73,9 +73,10 @@ export default {
 
 .main h1 {
   text-align: center;
-  font-size: 36px;
+  font-size: 42px;
   font-family: "Amatic SC", cursive;
-  margin: 1rem auto 0 auto;
+  margin-top: 1rem;
+  padding: 0;
 }
 
 .main .photo {
@@ -90,7 +91,6 @@ export default {
   display: grid;
   width: 37rem;
   height: 40rem;
-  /* padding-top: -2rem; */
 }
 .image:hover,
 .music a img:hover {

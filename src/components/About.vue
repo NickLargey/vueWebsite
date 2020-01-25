@@ -70,7 +70,7 @@ export default {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 42px;
   font-family: "Amatic SC", cursive;
   margin-top: 1em;
 }
