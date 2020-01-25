@@ -15,14 +15,13 @@ export default {
 </script>
 
 <style scoped>
-
 #footer p {
   display: flex;
   justify-content: center;
   background: url("../assets/fade.jpg") no-repeat;
   background-size: cover;
   width: 100%;
-  height: 5vh;
+  height: auto;
   color: white;
   font-size: 16px;
   font-family: "Libre Barcode 128", cursive;

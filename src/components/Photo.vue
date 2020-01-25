@@ -1,27 +1,22 @@
 <template>
-  <div class="container">
+  <div class="main">
     <h1>{{ title }}</h1>
-    <div class="main">
-      <div id="photo" class="photo">
-        <h3>Photography</h3>
-        <img
-          @click="showMultiple"
-          src="../assets/Photos/sunnBW.jpg"
-          class="image"
-        />
-        <VueEasyLightbox
-          :visible="visible"
-          :imgs="images"
-          :index="index"
-          @hide="handleHide"
-        ></VueEasyLightbox>
-      </div>
-      <div class="music">
-        <h3>Music</h3>
-        <a :href="[city]"><img src="../assets/cityPlanners.jpg"/></a>
-        <a :href="[lady]"><img src="../assets/ladySnowblood.jpg"/></a>
-        <a :href="[nick]"><img src="../assets/nick.jpg"/></a>
-      </div>
+    <div id="photo" class="photo">
+      <h3>{{ photo }}</h3>
+      <img @click="showMultiple" src="../assets/Photos/sunnBW.jpg" class="image" />
+      <VueEasyLightbox :visible="visible" :imgs="images" :index="index" @hide="handleHide"></VueEasyLightbox>
+    </div>
+    <div class="music">
+      <h3>{{ music }}</h3>
+      <a :href="[city]">
+        <img src="../assets/cityPlanners.jpg" />
+      </a>
+      <a :href="[lady]">
+        <img src="../assets/ladySnowblood.jpg" />
+      </a>
+      <a :href="[nick]">
+        <img src="../assets/nick.jpg" />
+      </a>
     </div>
   </div>
 </template>
@@ -31,7 +26,7 @@ import VueEasyLightbox from "vue-easy-lightbox";
 
 const context = require.context("../assets/Photos/", true, /\.jpg$/);
 const images = context.keys().map(context);
-// console.log(images);
+
 export default {
   components: {
     VueEasyLightbox
@@ -39,8 +34,9 @@ export default {
   data() {
     return {
       title: "Art",
+      photo: "Photography",
+      music: "Music",
       images: [],
-      titles: "Click To See More Photos",
       visible: false,
       index: 0,
       nick: "https://nicklargey.bandcamp.com/",
@@ -52,7 +48,7 @@ export default {
   methods: {
     showMultiple() {
       this.images = images;
-      this.index = 0; // index of imgList
+      this.index = 0;
       this.show();
     },
     show() {
@@ -66,70 +62,82 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  display: grid;
-  grid-template-rows: 1fr 10fr;
-  width: 100vw;
-  height: 110vh;
-  background: url("../assets/fade.jpg") no-repeat;
-  background-size: cover;
-  margin: 0;
-}
-h1 {
-  display: grid;
-  justify-content: center;
-  grid-row: 1;
-  font-size: 36px;
-  color: white;
-  font-family: "Amatic SC", cursive;
-  margin: 1em;
-}
 .main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 6fr;
+  width: 100%;
+  height: auto;
+  background: url("../assets/fade.jpg") no-repeat;
+  background-size: cover;
 }
-.photo {
-  display: inline-block;
+
+.main h1 {
+  text-align: center;
+  font-size: 36px;
+  font-family: "Amatic SC", cursive;
+  margin: 1rem auto 0 auto;
+}
+
+.main .photo {
+  display: grid;
   justify-content: center;
+  text-align: center;
   grid-column: 1;
   grid-row: 2;
-  margin-left: 2em;
-  color: white;
+  margin-left: 2rem;
 }
-.image {
+.main .image {
   display: grid;
-  max-width: 33em;
-  height: 30em;
-  justify-content: center;
-  margin: 1em 8em;
+  width: 37rem;
+  height: 40rem;
+  /* padding-top: -2rem; */
 }
-.image:hover {
+.image:hover,
+.music a img:hover {
   cursor: pointer;
   transform: scale(1.15);
   transition: 0.5s;
 }
 
-h3 {
+.main h3 {
+  margin: 1em;
   font-size: 24px;
-  color: white;
-  justify-content: center;
 }
 
 .music {
-  display: inline-block;
+  display: grid;
+  justify-content: center;
   grid-column: 2;
   grid-row: 2;
   margin: 0;
+  padding-right: 5em;
 }
 .music a img {
-  display: inline-block;
-  max-width: 11em;
-  height: 30em;
-  margin: 0 0 1em 0;
-  cursor: pointer;
+  display: grid;
+  grid-column: 2;
+  grid-row: 2;
+  width: 20rem;
+  height: 20rem;
+  margin: 1rem 0 1rem 0;
 }
-.music a img:hover {
-  transform: scale(1.15);
-  transition: 0.5s;
+
+@media (max-width: 768px) {
+  .main {
+    width: 768;
+    height: auto;
+  }
+  .music a img {
+    display: grid;
+    width: 9rem;
+    height: 10rem;
+    margin: 1rem 0 1rem 0;
+  }
+  .main .image {
+    display: grid;
+    width: 20rem;
+    height: 20rem;
+    justify-content: center;
+    margin: 1em 1em;
+  }
 }
 </style>

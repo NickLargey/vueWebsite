@@ -1,19 +1,17 @@
 <template>
-  <div class="continer">
-    <div id="home" class="home">
-      <div class="images">
-        <img :src="logo" />
-        <img :src="man" />
-      </div>
-      <h1>{{ name }}</h1>
-      <p>{{ pitch }}</p>
+  <div id="home" class="home">
+    <div class="images">
+      <img :src="logo" />
+      <img :src="man" />
     </div>
+    <h1>{{ name }}</h1>
+    <p>{{ pitch }}</p>
   </div>
 </template>
 
 <script>
 import logo from "../assets/server-client.svg";
-import man from "../assets/waiter.svg"; 
+import man from "../assets/waiter.svg";
 
 export default {
   data: function() {
@@ -22,29 +20,24 @@ export default {
       logo: logo,
       man: man,
       pitch:
-        "Aspiring Full-stack developer looking for employment in the front-end development world"
+        "Aspiring Full-stack developer seeking  employment in the front-end development world"
     };
   }
 };
 </script>
 
 <style scoped>
-.container {
-  display: flex;
-  margin: -1;
-}
 .home {
   display: grid;
-  color: white;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: auto;
   margin: 0;
   background: url("../assets/UNDERWATER.jpg") no-repeat;
   background-size: cover;
 }
 .images {
   display: inline-block;
-  margin: 7em auto 0 auto;
+  margin: 6em auto 0 auto;
 }
 h1 {
   margin: 0.5em auto 0 auto;

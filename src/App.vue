@@ -1,13 +1,11 @@
 <template>
   <div id="app">
-    <div class="container">
-      <!-- <Navbar /> -->
-      <Home />
-      <Projects />
-      <About />
-      <Photo />
-      <Footer />
-    </div>
+    <!-- <Navbar /> -->
+    <Home />
+    <Projects />
+    <About />
+    <Photo />
+    <Footer />
   </div>
 </template>
 
@@ -33,15 +31,8 @@ export default {
 </script>
 
 <style>
-body {
-  width: 90%;
-  height: 100%;
-  margin: 0;
-  border-left: solid white 5em;
-  border-right: solid white 3em;
-}
+body,
 #app {
-  display: grid;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -53,5 +44,20 @@ body {
   text-align: center;
   font-family: "Amatic SC", cursive;
   overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  body,
+  #app {
+    width: 768px;
+    height: auto;
+  }
+}
+@media (max-width: 375px) {
+  body,
+  #app {
+    width: 375px;
+    height: auto;
+  }
 }
 </style>

@@ -1,18 +1,11 @@
 <template>
-  <div class="container">
-    <section id="projects" class="projects">
-      <h1>{{ title }}</h1>
-      <div class="proj-images">
-        <a
-          v-for="project in projects"
-          :key="project"
-          :href="project[0]"
-          target="_blank"
-        >
-          <img :src="project[1]" />
-        </a>
-      </div>
-    </section>
+  <div id="projects" class="projects">
+    <h1>{{ title }}</h1>
+    <div class="proj-images">
+      <a v-for="project in projects" :key="project" :href="project[0]" target="_blank">
+        <img :src="project[1]" />
+      </a>
+    </div>
   </div>
 </template>
 
@@ -32,8 +25,8 @@ export default {
         ["https://venue-location.herokuapp.com", venue],
         ["https://github.com/NickLargey/ipGeolocation", IP],
         ["https://twitter.com/notDarnielle", not],
-        ["http://browserpiano.netlify.com", piano],
-         ]
+        ["http://browserpiano.netlify.com", piano]
+      ]
     };
   }
 };
@@ -42,12 +35,12 @@ export default {
 <style scoped>
 .projects {
   display: grid;
-  width: 100vw;
+  width: 100%;
   height: auto;
   color: white;
   background: url("../assets/fade.jpg") no-repeat;
   background-size: cover;
-  padding-bottom: 4em;
+  padding: 0;
 }
 h1 {
   display: flex;
@@ -59,6 +52,7 @@ h1 {
 img {
   display: inline-block;
   margin: 0 2em 2em 0;
+  padding: 1em;
   max-width: 25em;
   height: auto;
   transition: 0.2s;
